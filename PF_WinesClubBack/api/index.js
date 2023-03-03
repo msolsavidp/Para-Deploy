@@ -2,6 +2,7 @@ const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const { LoadingDb } = require("./src/DbLoad.js");
 const { LoadingProducts } = require("./src/DbLoadProducts.js");
+require('dotenv').config(); 
 // Sincronización de todos los modelos:
 const port = process.env.PORT || 3001;
 
