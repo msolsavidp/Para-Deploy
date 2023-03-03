@@ -14,7 +14,7 @@ import axios from "axios";
 // axios.defaults.baseURL = 'http://localhost:3001';
 axios.defaults.headers.common['Authorization'] = sessionStorage.getItem('user');
 
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'https://para-deploy-production.up.railway.app/';
 
 const domain = "dev-eqjids43tpn0c5lj.us.auth0.com";
 const clientId = "CW1fFkRrBryYtSpyefTvYFWGf6sNQNhg";
