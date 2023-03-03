@@ -1,0 +1,16 @@
+.active {
+    background-color: #ffbb33 !important;
+    color: black !important;
+}
+
+.name {
+    margin-bottom: -20px;
+    display: flex;
+    justify-content: center;
+    color: #212529;
+    font-size: 18px;
+}
+
+.image{
+    margin-bottom: 30px;
+}
