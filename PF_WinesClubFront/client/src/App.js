@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import axios from 'axios';
 import Home from "./components/Home/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Landing from "./components/Landing";
@@ -16,7 +17,7 @@ import Cart from "./components/Shop/Cart/Cart";
 import Payment from "./components/Shop/Payment/Payment"
 import Unsubcribed from "./components/Home/unsubscribedNewsletter/unsubscribed";
 import PaymentMembership from "./components/Shop/Payment/PaymentMembership";
-
+// axios.defaults.baseURL = 'http://localhost:3000/';
 
 function App() {
   return (
