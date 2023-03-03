@@ -1,8 +1,10 @@
 const { User, Membership, ShoppingCart, Order,Review, Product, Address, Newsletter } = require("../db");
+require('dotenv').config(); 
 const nodemailer = require ('nodemailer')
 const Handlebars = require("handlebars");
 const path = require('path');
 const fs = require('fs');
+const { USER, PASS } = process.env;
 
 
 // ------- email bienvenida ---------------------------------------//
@@ -22,12 +24,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-        // user: 'artstreetwineclub@gmail.com',
-        // pass: 'rokkcjdppianhcnb'
-        // user: 'mvaleriabzn@gmail.com',
-        // pass: 'zhwuiqooqpegqdkl'
-           user: 'wineclubartstreet@gmail.com',
-           pass: 'iqvnacnmyogdhahf'
+           user: 'streetwineclub@gmail.com',
+           pass: 'hmsnmhqskqgxxfdt'
 
     },
     
@@ -39,7 +37,7 @@ transporter.verify().then (() => {
 
 const mailOptions = {
 // from: 'artstreetwineclub@gmail.com',
-from: 'wineclubartstreet@gmail.com',
+from: USER,
 to: email,
 subject:  `Welcome ${fullname} your email was registered 📧✔`,
 html: htmlToSend,
@@ -129,8 +127,8 @@ const transporter = nodemailer.createTransport({
         // pass: 'rokkcjdppianhcnb'
         // user: 'mvaleriabzn@gmail.com',
         // pass: 'zhwuiqooqpegqdkl'
-        user: 'wineclubartstreet@gmail.com',
-        pass: 'iqvnacnmyogdhahf'
+        user: 'streetwineclub@gmail.com',
+        pass: 'hmsnmhqskqgxxfdt'
     },
     
 });
@@ -141,7 +139,7 @@ transporter.verify().then (() => {
 
 const mailOptions = {
 // from: 'artstreetwineclub@gmail.com',
-from: 'wineclubartstreet@gmail.com',
+from: USER,
 to: email,
 subject:  `Purchase Made ✔`,
 html: htmlToSend,
@@ -182,8 +180,8 @@ const emailNewsletter = async function(email){
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: 'wineclubartstreet@gmail.com',
-            pass: 'iqvnacnmyogdhahf'
+            user: 'streetwineclub@gmail.com',
+            pass: 'hmsnmhqskqgxxfdt'
         },
     });
     transporter.verify().then (() => {
@@ -191,14 +189,14 @@ const emailNewsletter = async function(email){
     })
 
     const mailOptions1 = {
-        from: 'wineclubartstreet@gmail.com',
+        from: USER,
         to: email,
         subject:  `Welcome to our newsletter`,
         html: fs.readFileSync(path.join(__dirname, '../utils/newsletter.html'), 'utf-8')
     }
 
     const mailOptions2 = {
-        from: 'wineclubartstreet@gmail.com',
+        from: USER,
         to: email,
         subject:  `Happy Monday`,
         html: fs.readFileSync(path.join(__dirname, '../utils/newsletter2.html'), 'utf-8')
@@ -304,8 +302,8 @@ const transporter = nodemailer.createTransport({
         // pass: 'rokkcjdppianhcnb'
         // user: 'mvaleriabzn@gmail.com',
         // pass: 'zhwuiqooqpegqdkl'
-        user: 'wineclubartstreet@gmail.com',
-        pass: 'iqvnacnmyogdhahf'
+        user: 'streetwineclub@gmail.com',
+        pass: 'hmsnmhqskqgxxfdt'
     },
     
 });
@@ -316,7 +314,7 @@ transporter.verify().then (() => {
 
 const mailOptions = {
 // from: 'artstreetwineclub@gmail.com',
-from: 'wineclubartstreet@gmail.com',
+from: USER,
 to: email,
 subject:  `order shipped ✔`,
 html: htmlToSend,
@@ -359,8 +357,8 @@ const transporter = nodemailer.createTransport({
         // pass: 'rokkcjdppianhcnb'
         // user: 'mvaleriabzn@gmail.com',
         // pass: 'zhwuiqooqpegqdkl'
-           user: 'wineclubartstreet@gmail.com',
-           pass: 'iqvnacnmyogdhahf'
+        user: 'streetwineclub@gmail.com',
+        pass: 'hmsnmhqskqgxxfdt'
 
     },
     
@@ -372,7 +370,7 @@ transporter.verify().then (() => {
 
 const mailOptions = {
 // from: 'artstreetwineclub@gmail.com',
-from: 'wineclubartstreet@gmail.com',
+from: USER,
 to: email,
 subject:  `Banned user`,
 html: htmlToSend,
